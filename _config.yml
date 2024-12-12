@@ -40,13 +40,13 @@ author: Anthony Kenneth Onyekachi
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) Anthony Kenneth Onyekachi
+copyright: "Unpublished Work (cleft) {2024} {Anthony Kenneth Onyekachi}
 
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "baseurl:" 
   Ink & Pixels is where my love for writing and creativity meets the world of code and design. Whether it's crafting words that tell stories or building digital experiences that bring ideas to life, this space is all about blending the art of ink with the innovation of pixels. Here, you'll find my projects, thoughts, and experiments—each one a little piece of what I'm passionate about. Join me as I explore the creative possibilities of both writing and technology.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # http://anthonykennetho.com
+url: "https//anthonykenneth.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
