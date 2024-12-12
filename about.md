@@ -19,4 +19,4 @@ Ink & Pixels is where I share my journey—through articles, creative writing, a
 
 ### Contact
 
-For more information about me check me out on [LinkedIn] (www.linkedin.com/in/anthony-kenneth-426461230)
+For more information [check me out on] [LinkedIn](www.linkedin.com/in/anthony-kenneth-426461230)
