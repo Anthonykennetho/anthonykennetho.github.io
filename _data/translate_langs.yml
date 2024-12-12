@@ -9,21 +9,21 @@
   img: https://cdn.countryflags.com/thumbs/france/flag-400.png
   text: French
 
-- lang: zh-CN
-  img: https://cdn.countryflags.com/thumbs/china/flag-400.png
-  text: Chinese(Simple)
+- lang: ig
+  img: https://cdn.countryflags.com/thumbs/nigeria/flag-400.png
+  text: Igbo
 
-- lang: ja
-  img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
-  text: Japanese
+- lang: yo
+  img: https://cdn.countryflags.com/thumbs/nigeria/flag-400.png
+  text: Yoruba
 
-- lang: ko
-  img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-  text: Korean
+- lang: ha
+  img: https://cdn.countryflags.com/thumbs/nigeria/flag-400.png
+  text: Hausa
 
-- lang: ru
-  img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
-  text: Russian
+- lang: sw
+  img: https://cdn.countryflags.com/thumbs/tanzania/flag-400.png
+  text: Swahili
 
 - lang: de
   img: https://cdn.countryflags.com/thumbs/germany/flag-400.png
