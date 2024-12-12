@@ -8,9 +8,9 @@ title: About
 ### why 
 
 I want to leveage data science and machine learning to derive business growth and improve decision making, to stay competitive in the ever growing job market and to use data to tell stories and solve real world problems in Agriculture, Social Impact and many other sector.
+
 ### How
 
-How
 I combine writing, coding, and design to create impactful work that blends storytelling with technology. My goal is to inspire and spark meaningful change.
 
 ### What
