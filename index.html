@@ -616,19 +616,42 @@
         <a href="https://github.com/Anthonykennetho" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-ico"><i class="fab fa-github"></i></div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/Anthonykennetho</div></div><div class="c-arr"><i class="fas fa-arrow-right"></i></div></a>
         <a href="https://myshowa.com" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-ico"><i class="fas fa-globe"></i></div><div><div class="c-lbl">Current Project</div><div class="c-val">myshowa.com</div></div><div class="c-arr"><i class="fas fa-arrow-right"></i></div></a>
       </div>
-      <a href="Anthony_Kenneth_CV.docx" download class="resume-btn"><i class="fas fa-download"></i> Download CV / Resume</a>
+      <a href="Anthony_Kenneth_CV.docx" download class="resume-btn" id="downloadBtn">
+  <i class="fas fa-download"></i> Download CV / Resume
+</a>
+<div id="downloadMessage" style="display:none; margin-top:10px; padding:10px; background:rgba(59,255,176,0.1); border-left:3px solid var(--accent); border-radius:5px; color:var(--accent); font-size:0.85rem; text-align:center;">
+  ✅ Download started! Check your downloads folder.
+</div>
+<div class="contact-form reveal d1">
+  <div class="f-title">Send a Message</div>
+  
+  <form id="contactForm">
+    <div class="f-group">
+      <label class="f-label">Your Name</label>
+      <input type="text" name="name" class="f-input" placeholder="Jane Smith" required />
     </div>
-    <div class="contact-form reveal d1">
-      <div class="f-title">Send a Message</div>
-      <form action="https://formspree.io/f/mzdypgyr" method="POST">
-        <div class="f-group"><label class="f-label">Your Name</label><input type="text" name="name" class="f-input" placeholder="Jane Smith" required /></div>
-        <div class="f-group"><label class="f-label">Email Address</label><input type="email" name="email" class="f-input" placeholder="jane@company.com" required /></div>
-        <div class="f-group"><label class="f-label">Subject</label><input type="text" name="subject" class="f-input" placeholder="Data Science role / Project collaboration" required /></div>
-        <div class="f-group"><label class="f-label">Message</label><textarea name="message" class="f-textarea" placeholder="Tell me about the opportunity or project..." required></textarea></div>
-        <button type="submit" class="f-submit">Send Message →</button>
-      </form>
+    
+    <div class="f-group">
+      <label class="f-label">Email Address</label>
+      <input type="email" name="email" class="f-input" placeholder="jane@company.com" required />
     </div>
-  </div>
+    
+    <div class="f-group">
+      <label class="f-label">Subject</label>
+      <input type="text" name="_subject" class="f-input" placeholder="Data Science role / Project collaboration" required />
+    </div>
+    
+    <div class="f-group">
+      <label class="f-label">Message</label>
+      <textarea name="message" class="f-textarea" placeholder="Tell me about the opportunity or project..." required></textarea>
+    </div>
+    
+    <button type="submit" class="f-submit" id="formSubmitBtn">Send Message →</button>
+    
+    <div id="formMessage" style="display:none; margin-top:15px; padding:12px; border-radius:8px; text-align:center;"></div>
+  </form>
+</div>
+</div>
 </section>
 
 <!-- Footer -->
@@ -682,6 +705,94 @@
       link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
     });
   });
+</script>
+<script>
+  // CV Download success message
+  const downloadBtn = document.getElementById('downloadBtn');
+  const downloadMessage = document.getElementById('downloadMessage');
+  
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function() {
+      downloadMessage.style.display = 'block';
+      setTimeout(function() {
+        downloadMessage.style.display = 'none';
+      }, 3000); // Message disappears after 3 seconds
+    });
+  }
+</script>
+<script>
+  // Contact Form with success/error messages
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+  const submitBtn = document.getElementById('formSubmitBtn');
+  
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop page from reloading
+      
+      // Show loading state
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Collect form data
+      const formData = new FormData(form);
+      
+      try {
+        // Send to Formspree
+        const response = await fetch('https://formspree.io/f/mzdypgyr', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Success!
+          formMessage.style.display = 'block';
+          formMessage.style.background = 'rgba(59,255,176,0.1)';
+          formMessage.style.border = '1px solid var(--accent)';
+          formMessage.style.color = 'var(--accent)';
+          formMessage.innerHTML = '✅ Message sent successfully! I\'ll get back to you soon.';
+          
+          // Clear the form
+          form.reset();
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            formMessage.style.display = 'none';
+          }, 5000);
+        } else {
+          // Server error
+          formMessage.style.display = 'block';
+          formMessage.style.background = 'rgba(255,107,107,0.1)';
+          formMessage.style.border = '1px solid #ff6b6b';
+          formMessage.style.color = '#ff6b6b';
+          formMessage.innerHTML = '❌ Something went wrong. Please email me directly: anthonykennethonyekachi@gmail.com';
+          
+          setTimeout(() => {
+            formMessage.style.display = 'none';
+          }, 5000);
+        }
+      } catch (error) {
+        // Network error
+        formMessage.style.display = 'block';
+        formMessage.style.background = 'rgba(255,107,107,0.1)';
+        formMessage.style.border = '1px solid #ff6b6b';
+        formMessage.style.color = '#ff6b6b';
+        formMessage.innerHTML = '❌ Network error. Please check your connection and try again.';
+        
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 5000);
+      }
+      
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+  }
 </script>
 </body>
 </html>
